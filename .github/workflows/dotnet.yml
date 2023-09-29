@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Pass the received secret to action
-      uses: ./.github/actions/my-action
+      uses: ./.github/devops-fundamentals-templates/dofd-05-dotnet-AntonSkochulyas/actions
       with:
         token: ${{ secrets.access-token }}
     - uses: actions/checkout@v3
