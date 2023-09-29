@@ -17,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Use the Secret Token
-      run: |
-          MY_SECRET_TOKEN=${{ secrets.PAT_TOKEN }}
+    - name: Pass the received secret to action
+      uses: ./.github/actions/my-action
+      with:
+        token: ${{ secrets.access-token }}
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
