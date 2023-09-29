@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Use the Secret Token
+      run: |
+          MY_SECRET_TOKEN=${{ secrets.PAT_TOKEN }}
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
